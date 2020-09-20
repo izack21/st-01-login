@@ -1,4 +1,4 @@
-# # SUIT TEST 01 - Login
+# SUIT TEST 01 - Login
 
 O objetivo dos códigos presentes nesse repositório é validar o funcionamento do acesso via login na ferramenta.
 

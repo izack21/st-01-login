@@ -1,5 +1,7 @@
 # SUIT TEST 01 - Login
 
+As váriaveis a seguir são obrigatórias para os testes: string username e string pass
+
 O objetivo dos códigos presentes nesse repositório é validar o funcionamento do acesso via login na ferramenta.
 
 # CT01

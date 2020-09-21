@@ -1,5 +1,5 @@
 // Desenvolvido por: Izack G. Passos Rodrigues - Setembro/2020
-// O objetivo do teste È validar tentativa de login sem dados de usu·rio.
+// O objetivo do teste √© validar tentativa de login sem dados de usu√°rio.
 
 using System;
 using System.Collections;
@@ -46,5 +46,6 @@ public class Ct01AccessFailTest {
     Assert.That(driver.FindElement(By.CssSelector("font")).Text, Is.EqualTo("Your account may be disabled or blocked or the username/password you entered is incorrect."));
 
         Thread.Sleep(2000);
+        driver.Quit();
   }
 }

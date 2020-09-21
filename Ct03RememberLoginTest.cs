@@ -1,6 +1,6 @@
 // Desenvolvido por: Izack G. Passos Rodrigues - Setembro/2020
-// O objetivo do teste È validar o funcionamento do check-box para 
-// gravaÁ„o dos dados de login do usu·rio.
+// O objetivo do teste √© validar o funcionamento do check-box para 
+// grava√ß√£o dos dados de login do usu√°rio.
 
 
 using System;
@@ -20,6 +20,10 @@ public class Ct03RememberLoginTest {
   private IWebDriver driver;
   public IDictionary<string, object> vars {get; private set;}
   private IJavaScriptExecutor js;
+  
+  public string username = ""; //Variavel de preenchimento obrigat√≥rio para o teste.
+  public string pass = ""; //Variavel de preenchimento obrigat√≥rio para o teste.
+
   [SetUp]
   public void SetUp() {
     driver = new ChromeDriver();
@@ -35,19 +39,19 @@ public class Ct03RememberLoginTest {
     driver.Navigate().GoToUrl("https://mantis-prova.base2.com.br/login_page.php");
     driver.Manage().Window.Size = new System.Drawing.Size(1382, 754);
     driver.FindElement(By.Name("username")).Click();
-    driver.FindElement(By.Name("username")).SendKeys("izack.rodrigues");
+    driver.FindElement(By.Name("username")).SendKeys(username);
     driver.FindElement(By.Name("password")).Click();
-    driver.FindElement(By.Name("password")).SendKeys("Teste@19");
+    driver.FindElement(By.Name("password")).SendKeys(pass);
     driver.FindElement(By.Name("perm_login")).Click();
     driver.FindElement(By.CssSelector(".button")).Click();
     driver.FindElement(By.LinkText("Logout")).Click();
     {
       string value = driver.FindElement(By.Name("username")).GetAttribute("value");
-      Assert.That(value, Is.EqualTo("izack.rodrigues"));
+      Assert.That(value, Is.EqualTo(username));
+
+            Thread.Sleep(2000);
+            driver.Quit();
     }
-    {
-      string value = driver.FindElement(By.Name("password")).GetAttribute("value");
-      Assert.That(value, Is.EqualTo("Biscoitos19"));
-    }
+
   }
 }
